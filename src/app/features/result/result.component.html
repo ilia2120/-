@@ -1,0 +1,117 @@
+<div class="s">
+  <span
+    class="btn btn-warning"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasExample"
+    aria-controls="offcanvasExample"
+    >{{ product.length }} <i class="bi bi-cart3"></i
+  ></span>
+</div>
+<div
+  class="offcanvas offcanvas-start"
+  tabindex="-1"
+  id="offcanvasExample"
+  aria-labelledby="offcanvasExampleLabel"
+>
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+    <button
+      type="button"
+      class="btn-close"
+      data-bs-dismiss="offcanvas"
+      aria-label="Close"
+    ></button>
+  </div>
+  <div class="offcanvas-body">
+    <div>
+      <span class="badge text-bg-dark fs-5">Total Price: {{ totalPrice }}</span>
+      <hr />
+      @for (item of product; track $index) {
+      <div class="card" style="width: 18rem">
+        <div class="card-body">
+          <p class="card-text">
+            {{ item.title }}
+            price:{{ item.price }}
+          </p>
+          <button
+            class="btn btn-danger"
+            (click)="deleteproductsincart(item.id)"
+          >
+            delete
+          </button>
+        </div>
+      </div>
+      }
+    </div>
+    <div class="dropdown mt-3"></div>
+  </div>
+</div>
+<section class="container-xll m-auto pt-5 gap-3 sa">
+  <section
+    class="d-flex justify-content-center align-items center align-content-center gap-3"
+  >
+    @for (categori of CategoryInCategoy; track $index) {
+    <div class="dropdown">
+      <button
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        {{ categori.name }}
+      </button>
+      <ul class="dropdown-menu">
+        @for(products of categori.product;track $index){ @for (item of category;
+        track $index) {@if(item.name === products){
+        <app-display
+          [category]="item"
+          (addcategory)="categoryproducts(item.slug)"
+        ></app-display
+        >}}}
+      </ul>
+    </div>
+    }
+  </section>
+  <section class="container-xll d-flex justify-content-center pt-5 gap-3 sa">
+    <div class="si">
+      <input
+        type="search"
+        id="site-search"
+        name="q"
+        aria-label="search products"
+        [(ngModel)]="nam"
+      />
+
+      <button class="btn btn-dark" (click)="search()">Search</button>
+    </div>
+  </section>
+  <section
+    class="container-xl d-flex justify-content-center align-items center align-content-center gap-3 pt-5"
+    id="b"
+  >
+    @if (products$ | async; as products) { @for(sas of products;track
+    $index){<app-creat [products]="sas" (addcart)="addcart($event)"></app-creat
+    >}}
+  </section>
+  <section class="d-flex justify-content-center pt-5">
+    <div class="form-contrl d-flex gap-3 c">
+      <button
+        class="btn btn-dark"
+        (click)="previouspage()"
+        [disabled]="skip === 0"
+      >
+        -
+      </button>
+      <span class="badge text-bg-dark fs-5"
+        >{{ currentpage }} / {{ totalpage }}</span
+      >
+      <button
+        class="btn btn-dark"
+        (click)="nextpage()"
+        [disabled]="skip + limit >= total"
+      >
+        >
+      </button>
+    </div>
+  </section>
+</section>

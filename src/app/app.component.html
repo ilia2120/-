@@ -1,0 +1,103 @@
+<header class="container-max-widths">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary border-bottom fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/">{{ appName }}</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          @for (item of navigationItems; track $index) {
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="item.path"
+              [routerLinkActive]="item?.activeClassName || 'active'"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >{{ item.title }}
+            </a>
+          </li>
+          }
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+<main class="container-max-widths m-auto">
+  <router-outlet></router-outlet>
+</main>
+<footer>
+  <div class="card bg-dark">
+    <button class="form-contrl bg-info">
+      <a href=""><i class="bi bi-chevron-up"></i></a>
+    </button>
+
+    <div class="divs">
+      <table class="table table-dark table-borderless">
+        <thead>
+          <tr>
+            <th>ნავიგაცია</th>
+            <th>დახმარება</th>
+            <th class="des">პროდუქტები</th>
+            <th class="des"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="about">About</a></li>
+                <li><a href="contact">contact</a></li>
+                <li><a href="products">result</a></li>
+              </ul>
+            </td>
+            <td>
+              <ul>
+                <li><a href="#">ingo.com</a></li>
+                <li><a href="#">contact</a></li>
+                <li>
+                  <ul class="ro">
+                    <li>
+                      <a href="#"><i class="bi bi-facebook"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"> <i class="bi bi-instagram"></i></a>
+                    </li>
+                    <li>
+                      <a href="#"><i class="bi bi-twitter"></i></a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
+            <td class="des">
+              <ul>
+                <li><a href="#">beauty and self care</a></li>
+                <li><a href="#">home furniture</a></li>
+                <li><a href="#">food and medicines</a></li>
+                <li><a href="#">technic</a></li>
+              </ul>
+            </td>
+            <td class="des">
+              <ul>
+                <li><a href="#">men's accessories</a></li>
+                <li><a href="#">transport</a></li>
+                <li><a href="#">accessories</a></li>
+                <li><a href="#">women's accessories</a></li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</footer>

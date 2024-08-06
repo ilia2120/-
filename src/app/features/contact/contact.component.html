@@ -1,0 +1,190 @@
+<section class="container-xxl row row-cols-2 m-auto grid column-gap-4">
+  <form #form="ngForm" class="row border rounded-4 bg-light">
+    <h1>contact us</h1>
+    <hr />
+    <div class="row g-2">
+      <div class="col-md">
+        <input
+          ngModel
+          required
+          id="firstName"
+          name="firstName"
+          type="text"
+          class="form-control"
+          placeholder="First name"
+          aria-label="First name"
+          #firstName="ngModel"
+          pattern="^[a-zA-z]{2,22}$"
+          [ngClass]="{
+            'is-valid': firstName.valid && firstName.touched,
+            'is-invalid': !firstName.valid && firstName.touched,
+          }"
+        />
+        @if (firstName.touched) { @if (firstName.valid) {
+        <div class="valid-feedback">Looks good!</div>
+        } @else {
+        <div class="invalid-feedback">
+          First name should have only symbols in 2-22 range
+        </div>
+        } }
+      </div>
+      <div class="col">
+        <input
+          ngModel
+          required
+          id="lastName"
+          name="lastName"
+          type="text"
+          class="form-control"
+          placeholder="Last name"
+          aria-label="Last name"
+          #lastName="ngModel"
+          pattern="^[a-zA-z]{3,22}$"
+          [ngClass]="{
+            'is-valid': lastName.valid && lastName.touched,
+            'is-invalid': !lastName.valid && lastName.touched,
+          }"
+        />
+        @if (lastName.touched) { @if (lastName.valid) {
+        <div class="valid-feedback">Looks good!</div>
+        } @else {
+        <div class="invalid-feedback">
+          First lastname should have only symbols in 3-22 range
+        </div>
+        } }
+      </div>
+    </div>
+    <div class="row g-2">
+      <div class="col-md">
+        <input
+          ngModel
+          required
+          id="email"
+          name="email"
+          type="email"
+          class="form-control"
+          placeholder="email"
+          aria-label="email"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+          #email="ngModel"
+          [ngClass]="{
+            'is-valid': email.valid && email.touched,
+            'is-invalid': !email.valid && email.touched,
+          }"
+        />
+        @if (email.touched) { @if (email.valid) {
+        <div class="valid-feedback">Looks good!</div>
+        } @else {
+        <div class="invalid-feedback">Write correct email</div>
+        } }
+      </div>
+      <div class="col">
+        <input
+          ngModel
+          required
+          id="phoneNumber"
+          name="phoneNumber"
+          type="tel"
+          class="form-control"
+          placeholder="Phone number"
+          aria-label="Phone number"
+          pattern="5\d{8}$"
+          #phoneNumber="ngModel"
+          [ngClass]="{
+            'is-valid': phoneNumber.valid && phoneNumber.touched,
+            'is-invalid': !phoneNumber.valid && phoneNumber.touched,
+          }"
+        />
+        @if (phoneNumber.touched) { @if (phoneNumber.valid) {
+        <div class="valid-feedback">Looks good!</div>
+        } @else {
+        <div class="invalid-feedback">
+          Write correct phone number (5XXXXXXXX)
+        </div>
+        } }
+      </div>
+    </div>
+
+    <div class="row g-3">
+      <select class="form-select" aria-label="Default select example">
+        <option selected>ჩვენს შესახებ</option>
+        <option value="1">პროდუქტები</option>
+        <option value="2">ზოგადი</option>
+      </select>
+    </div>
+    <div class="row g-3">
+      <label for="floatingTextarea">Comments</label>
+      <textarea
+        ngModel
+        required
+        name="textarea"
+        class="form-control"
+        id="exampleFormControlTextarea1"
+        rows="3"
+      ></textarea>
+    </div>
+    <div class="mb-3 g-3 d-flex justify-content-end">
+      <button
+        class="btn btn-dark"
+        [disabled]="!form.valid"
+        (click)="onSubmit(form)"
+      >
+        Submit
+      </button>
+    </div>
+  </form>
+  <section class="row border rounded-4 m-auto bg-light">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d372.5706113738197!2d44.89727904236739!3d41.66514210596558!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40440e6745d982c5%3A0x923a639ecf15b9a6!2s6%20 Nakaduli%20I%20Ln%2C%20T'bilisi!5e0!3m2!1sen!2sge!4v1721892593358!5m2!1sen!2sge"
+      width="600"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+    ></iframe>
+    <div class="mb-3 d-flex row div pt-3">
+      <a
+        class="icon-link icon-link-hover"
+        style="--bs-icon-link-transform: translate3d(0, -0.125rem, 0)"
+        href="#"
+      >
+        <i class="bi bi-mailbox"></i>
+        შპს შოპინგი
+      </a>
+      <a
+        class="icon-link icon-link-hover"
+        style="--bs-icon-link-transform: translate3d(0, -0.125rem, 0)"
+        href="#"
+      >
+        <i class="bi bi-info-circle"></i>
+        market.com
+      </a>
+      <a
+        class="icon-link icon-link-hover"
+        style="--bs-icon-link-transform: translate3d(0, -0.125rem, 0)"
+        href="#"
+      >
+        <i class="bi bi-menu-down"></i>
+        საიდენტიფიკაციო კოდი: 0102012322
+      </a>
+      <a
+        class="icon-link icon-link-hover"
+        style="--bs-icon-link-transform: translate3d(0, -0.125rem, 0)"
+        href="#"
+      >
+        <i class="bi bi-telephone"></i>
+        (032) 2123456
+      </a>
+      <a
+        class="icon-link icon-link-hover"
+        style="--bs-icon-link-transform: translate3d(0, -0.125rem, 0)"
+        href="#"
+      >
+        <i class="bi bi-map"></i>
+        ქ.თბილისი,სამგორის რაიონი,ნაკადულის ქუჩა 6,სართული 5
+      </a>
+    </div>
+  </section>
+</section>
+<div class="fot"></div>

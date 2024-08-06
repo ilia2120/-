@@ -1,0 +1,102 @@
+<section class="pt-0 s">
+  <div id="carouselExampleDark" class="carousel carousel-dark slide">
+    <div class="carousel-indicators">
+      <button
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide-to="0"
+        class="active"
+        aria-current="true"
+        aria-label="Slide 1"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide-to="1"
+        aria-label="Slide 2"
+      ></button>
+      <button
+        type="button"
+        data-bs-target="#carouselExampleDark"
+        data-bs-slide-to="2"
+        aria-label="Slide 3"
+      ></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0070/7032/files/trending-products_c8d0d15c-9afc-47e3-9ba2-f7bad0505b9b.png?v=1614559651"
+          class="d-block w-100"
+          alt="picture"
+        />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>ეწვიეთ და შეიძინეთ თქვენთვის საჭირო ნითები</h5>
+          <p>ჩვენთან ყველაფერია</p>
+        </div>
+      </div>
+      @for (item of pictures; track $index) {
+      <div class="carousel-item" data-bs-interval="2000">
+        <img [src]="item.slide" class="d-block w-100" alt="{{ item.name }}" />
+        <div class="carousel-caption d-none d-md-block">
+          <h5>ეწვიეთ და შეიძინეთ თქვენთვის საჭირო ნითები</h5>
+          <p>ჩვენთან ყველაფერია</p>
+        </div>
+      </div>
+      }
+    </div>
+    <button
+      class="carousel-control-prev"
+      type="button"
+      data-bs-target="#carouselExampleDark"
+      data-bs-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button
+      class="carousel-control-next"
+      type="button"
+      data-bs-target="#carouselExampleDark"
+      data-bs-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+<section class="d-flex justify-content-center pt-5 g-5 a">
+  <div class="form-control">
+    <div class="back"></div>
+    <a href="result">Shop Now</a>
+    <img
+      src="https://media.licdn.com/dms/image/D4D12AQFcfQcbLfHWYA/article-cover_image-shrink_600_2000/0/1679638182920?e=2147483647&v=beta&t=QZAViim5Igy34u-WlLUXsYCbEGY6gR87PPD-o7LR8XI"
+      alt=""
+    />
+  </div>
+  <div class="form-control">
+    <div class="back"></div>
+    <a href="result">Shop Now</a>
+
+    <img
+      src="https://assets.hgtv.ca/wp-content/uploads/2022/09/Best-Canadian-Furniture-Stores-2022.jpg"
+      alt=""
+    />
+  </div>
+  <div class="form-control">
+    <div class="back"></div>
+    <a href="result">Shop Now</a>
+    <img
+      src="https://www.thomasnet.com/articles/_next/image/?url=https%3A%2F%2Fthomasmkt.wpengine.com%2Fwp-content%2Fuploads%2F2023%2F05%2Fshutterstock_496455115-min.jpeg&w=3840&q=75"
+      alt=""
+    />
+  </div>
+</section>
+<section class="container-xl pt-5">
+  <hr />
+  <h1>Feivorit product</h1>
+  $65 Black Watch INSTOCK Black Watch $72 Blue Band LOWSTOCK Blue Band $79 Blue
+  T-Shirt INSTOCK Blue T-Shirt $29 Bracelet INSTOCK Bracelet $15 Brown Purse
+  OUTOFSTOCK Brown Purse $120 Chakra Bracelet LOWSTOCK Chakra Bracelet $32
+  Galaxy Earrings INSTOCK Galaxy Earrings $34 Game Controller LOWSTOCK Game
+  Controller $99 Gaming Set INSTOCK Gaming Set $299
+</section>

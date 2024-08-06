@@ -1,0 +1,51 @@
+section.s {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+
+  h1 {
+    font-size: clamp(25px, 30vw, 180px);
+    color: rgba(226, 175, 155, 0.247);
+  }
+  div {
+    max-width: 500px;
+    padding-left: 5px;
+  }
+  h2 {
+    color: orange;
+  }
+  p {
+    color: orange;
+  }
+}
+img {
+  max-width: 700px;
+  border-radius: 10px;
+}
+@media screen and (max-width: 900px) {
+  h1 {
+    padding-left: 5px;
+  }
+  img {
+    display: none;
+  }
+}
+section.b {
+  height: 800px;
+  background-image: url(https://media.istockphoto.com/id/1155240408/photo/table-filled-with-large-variety-of-food.jpg?s=2048x2048&w=is&k=20&c=Ys9E80Q0C87Fw1oi--jWsRgoJ0QZAluhnLtR9qP1iYE=);
+  background-attachment: fixed;
+
+
+  div.t {
+    width: 400px;
+    background-color: black;
+    border-radius: 10px;
+    padding: 8px;
+    h1 {
+      color: rgb(214, 188, 41);
+      font-size: small;
+    }
+  }
+}
